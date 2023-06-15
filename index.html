@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Test</title>
+    <link rel="stylesheet" href="css/all.css">
+
+  </head>
+  <body>
+    <div class="steps">
+      <div class="main-step step-active" data-id="1">
+        <div class="two-column">
+          <div class="column">
+            <span class="step-numbers">1 из 5</span>
+            <h2>Какая идеальная планировка вашего дома?</h2>
+            <span class="sub-title">Сколько спален вы хотите в доме?</span>
+            <div class="room-check">
+              <div class="item">
+                <input type="radio" name="room" id="room2" checked>
+                <label for="room2">2 спальни</label>
+              </div>
+              <div class="item">
+                <input type="radio" name="room" id="room3">
+                <label for="room3">3 спальни</label>
+              </div>
+            </div>
+            <span class="sub-title">Какой уровень комфорта?</span>
+            <div class="room-comfort">
+              <div class="item">
+                <input type="radio" name="comfort" id="standart" checked>
+                <label for="standart">стандарт</label>
+              </div>
+              <div class="item">
+                <input type="radio" name="comfort" id="comfort">
+                <label for="comfort">комфорт</label>
+              </div>
+            </div>
+            <span class="sub-title">Что еще необходимо?</span>
+            <div class="checkbox-list">
+              <div class="item">
+                <input type="checkbox" name="boiler" id="boiler">
+                <label for="boiler">котельная</label>
+              </div>
+              <div class="item">
+                <input type="checkbox" name="hamam" id="hamam">
+                <label for="hamam">хамам</label>
+              </div>
+              <div class="item">
+                <input type="checkbox" name="dressing" id="dressing">
+                <label for="dressing">гардеробная при спальне</label>
+              </div>
+              <div class="item">
+                <input type="checkbox" name="fireplace" id="fireplace">
+                <label for="fireplace">камин</label>
+              </div>
+              <div class="item">
+                <input type="checkbox" name="bathroom" id="bathroom">
+                <label for="bathroom">хозяйский санузел</label>
+              </div>
+              <div class="item">
+                <input type="checkbox" name="office" id="office">
+                <label for="office">кабинет/игровая</label>
+              </div>
+              <div class="item">
+                <input type="checkbox" name="terrace" id="terrace">
+                <label for="terrace">терасса</label>
+              </div>
+              <div class="item">
+                <input type="checkbox" name="kitchen" id="kitchen">
+                <label for="kitchen">черная кухня</label>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="result-box">
+              <span class="result">63</span> м2
+            </div>
+          </div>
+        </div>
+        <div class="btn-holder">
+          <button class="btn btn-next">Далее</button>
+        </div>
+      </div>
+      <div class="main-step" data-id="2">
+        <span class="step-numbers">2 из 5</span>
+        <h2>Какой тип кровли вам подходит?</h2>
+        <div class="roofing-list">
+          <div class="item">
+            <input type="radio" name="roofing" id="flat">
+            <label for="flat">Плоская</label>
+          </div>
+          <div class="item">
+            <input type="radio" name="roofing" id="triangular">
+            <label for="triangular">Треугольная</label>
+          </div>
+          <div class="item">
+            <input type="radio" name="roofing" id="bevelled">
+            <label for="bevelled">Скошенная</label>
+          </div>
+        </div>
+        <div class="btn-holder">
+          <button class="btn btn-prev">Назад</button>
+          <button class="btn btn-next" disabled>Далее</button>
+        </div>
+      </div>
+      <div class="main-step" data-id="3">
+        <span class="step-numbers">3 из 5</span>
+        <h2>Какой фасад вам нравится больше всего?</h2>
+        <div class="facade-list">
+          <div class="item">
+            <input type="radio" name="facade" id="facade1">
+            <label for="facade1">Фасад 1</label>
+          </div>
+          <div class="item">
+            <input type="radio" name="facade" id="facade2">
+            <label for="facade2">Фасад 2</label>
+          </div>
+          <div class="item">
+            <input type="radio" name="facade" id="facade3">
+            <label for="facade3">Фасад 3</label>
+          </div>
+        </div>
+        <div class="btn-holder">
+          <button class="btn btn-prev">Назад</button>
+          <button class="btn btn-next" disabled>Далее</button>
+        </div>
+      </div>
+      <div class="main-step" data-id="4">
+        <span class="step-numbers">4 из 5</span>
+        <h2>Какой интерьер вы видете в вашем доме?</h2>
+        <div class="interior-list">
+          <div class="item">
+            <input type="radio" name="interior" id="interior1">
+            <label for="interior1">Интерьер 1</label>
+          </div>
+          <div class="item">
+            <input type="radio" name="interior" id="interior2">
+            <label for="interior2">Интерьер 2</label>
+          </div>
+        </div>
+        <div class="btn-holder">
+          <button class="btn btn-prev">Назад</button>
+          <button class="btn btn-next" disabled>Далее</button>
+        </div>
+      </div>
+      <div class="main-step" data-id="5">
+        <span class="step-numbers">5 из 5</span>
+        <h2>Мы уже просчитали бюджет вашего дома! <br>
+          Последний вопрос: как планируете покупать дом?</h2>
+        <div class="payment-list">
+          <div class="item">
+            <input type="radio" name="payment" id="own_funds">
+            <label for="own_funds">Собственные средства</label>
+          </div>
+          <div class="item">
+            <input type="radio" name="payment" id="credit">
+            <label for="credit">Кредит</label>
+          </div>
+        </div>
+        <div class="btn-holder">
+          <button class="btn btn-prev">Назад</button>
+          <button class="btn btn-finish" disabled>Расчитать цену</button>
+        </div>
+      </div>
+    </div>
+  <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+  <script src="js/main.js"></script>
+  </body>
+</html>

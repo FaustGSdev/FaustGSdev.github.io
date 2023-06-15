@@ -1,0 +1,99 @@
+@import "../_helpers/variables";
+
+.main-step {
+    background: #FFFFFF;
+    border-radius: 4px;
+    padding: 80px 40px 100px;
+    display: none;
+    &.step-active {
+        display: block;
+    }
+    .step-numbers {
+        display: block;
+        padding: 20px 0;
+        color: #031531;
+        opacity: 0.4;
+    }
+    .two-column {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        .column {
+            width: 49%;
+        }
+    }
+    h2 {
+        margin-bottom: 35px;
+    }
+    .sub-title {
+        display: block;
+        margin-bottom: 15px;
+    }
+    .btn-holder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        .btn {
+            &+.btn {
+                margin-left: 10px;
+            }
+        }
+    }
+    .room-comfort,
+    .room-check {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        .item {
+            display: flex;
+            align-items: center;
+            &+.item {
+                margin-left: 15px;
+            }
+        }
+    }
+    .checkbox-list {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        .item {
+            display: flex;
+            align-items: center;
+            width: 50%;
+            margin-bottom: 15px;
+        }
+    }
+    .result-box {
+        font-weight: 600;
+        font-size: 37px;
+        line-height: 110%;
+        color: #031531;
+    }
+    .facade-list,
+    .roofing-list {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        .item {
+            display: flex;
+            align-items: center;
+            width: 32%;
+        }
+    }
+    .interior-list {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        .item {
+            display: flex;
+            align-items: center;
+            width: 50%;
+            margin-bottom: 15px;
+        }
+    }
+}

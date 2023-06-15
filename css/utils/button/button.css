@@ -1,0 +1,135 @@
+body .btn, .app .btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: none;
+  background: transparent;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  outline: none !important;
+  padding: 0px 50px;
+  width: 300px;
+  height: 70px;
+  border-radius: 55px; }
+  @media only screen and (max-width: 767px) {
+    body .btn, .app .btn {
+      width: 220px;
+      padding: 0px 40px; } }
+  @media only screen and (max-width: 379px) {
+    body .btn, .app .btn {
+      width: initial;
+      padding: 0px 30px; } }
+  body .btn span, .app .btn span {
+    transition: all linear 0.5s; }
+  body .btn:focus, .app .btn:focus {
+    outline: none !important;
+    box-shadow: none !important; }
+  body .btn svg, .app .btn svg {
+    display: block; }
+    body .btn svg path, .app .btn svg path {
+      transition: all linear 0.5s; }
+  body .btn.btn-default, .app .btn.btn-default {
+    background: #E9EEF4;
+    border-radius: 55px;
+    color: #545F6F; }
+    body .btn.btn-default:hover, .app .btn.btn-default:hover {
+      color: #458FF6; }
+      body .btn.btn-default:hover svg path, .app .btn.btn-default:hover svg path {
+        stroke: #458FF6; }
+    body .btn.btn-default.close, .app .btn.btn-default.close {
+      text-align: center; }
+    @media only screen and (max-width: 767px) {
+      body .btn.btn-default.btn-back, .app .btn.btn-default.btn-back {
+        padding: 0;
+        width: 70px;
+        justify-content: center;
+        border-radius: 50%; }
+        body .btn.btn-default.btn-back span, .app .btn.btn-default.btn-back span {
+          display: none; } }
+  body .btn.btn-primary, .app .btn.btn-primary {
+    background: #458FF6;
+    box-shadow: 0px 4px 20px rgba(21, 32, 49, 0.05);
+    color: #FFFFFF; }
+    body .btn.btn-primary.disabled, .app .btn.btn-primary.disabled {
+      cursor: initial;
+      background: rgba(69, 143, 246, 0.25);
+      position: relative; }
+      body .btn.btn-primary.disabled:after, .app .btn.btn-primary.disabled:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        content: '';
+        z-index: 2; }
+      body .btn.btn-primary.disabled:hover, .app .btn.btn-primary.disabled:hover {
+        background: rgba(69, 143, 246, 0.25); }
+    body .btn.btn-primary.btn-select, .app .btn.btn-primary.btn-select {
+      height: 50px;
+      background: #458FF6;
+      box-shadow: 0px 4px 20px rgba(21, 32, 49, 0.05);
+      border-radius: 55px;
+      width: 100%;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      padding: 0;
+      letter-spacing: 0;
+      text-transform: none;
+      margin-top: auto;
+      position: relative;
+      transition: all linear 0.5s; }
+    body .btn.btn-primary:hover, .app .btn.btn-primary:hover {
+      background: linear-gradient(208.18deg, #67C3F3 9.05%, #5A98F2 76.74%);
+      box-shadow: 0px 4px 20px rgba(21, 32, 49, 0.05); }
+  body .btn.btn-control, .app .btn.btn-control {
+    background: #458FF6;
+    box-shadow: 0px 4px 20px rgba(21, 32, 49, 0.05);
+    border-radius: 55px;
+    padding: 0 20px;
+    height: 50px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    justify-content: center;
+    width: initial;
+    letter-spacing: initial;
+    text-transform: none; }
+    body .btn.btn-control svg, .app .btn.btn-control svg {
+      display: block;
+      margin-right: 10px; }
+    body .btn.btn-control:hover, .app .btn.btn-control:hover {
+      background: linear-gradient(208.18deg, #67C3F3 9.05%, #5A98F2 76.74%); }
+  body .btn.ico-del, .app .btn.ico-del {
+    width: 24px;
+    height: 24px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    transition: all linear 0.5s; }
+    body .btn.ico-del svg, .app .btn.ico-del svg {
+      display: block; }
+    body .btn.ico-del:hover, .app .btn.ico-del:hover {
+      background: #458FF6 !important; }
+      body .btn.ico-del:hover svg path, .app .btn.ico-del:hover svg path {
+        stroke: #fff; }
+
+/*# sourceMappingURL=button.css.map */
