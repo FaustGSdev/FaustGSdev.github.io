@@ -6,11 +6,24 @@ $( function() {
     var room_comfort;
     var check_choose = [];
     var i = 0;
+    var result = $('.result-box').find('.result');
+    var choose_1 = ['fireplace'],
+        choose_2 = ['fireplace', 'terrace'],
+        choose_3 = ['terrace'],
+        choose_4 = ['boiler'],
+        choose_5 = ['boiler', 'fireplace'],
+        choose_6 = ['boiler', 'fireplace', 'terrace'],
+        choose_7 = ['fireplace', 'terrace', 'hamam'],
+        choose_8 = ['terrace', 'boiler'],
+        choose_9 = ['terrace', 'boiler', 'fireplace', 'hamam'],
+        choose_10 = ['boiler', 'hamam'],
+        choose_11 = ['boiler', 'hamam', 'fireplace'],
+        choose_12 = ['boiler', 'hamam', 'terrace'];
 
     // init choose room
     function changeResult() {
         if(room == 'room2' && room_comfort == 'standart') {
-            $('.result-box').find('.result').html('63');
+            result.html('63');
         }
         if(room == 'room2' && room_comfort == 'comfort') {
             $('.checkbox-list').find('input').each(function(){
@@ -23,7 +36,7 @@ $( function() {
                 }
             });
             console.log(check_choose);
-            // $('.result-box').find('.result').html('96');
+            // result.html('96');
         }
         if(room == 'room3' && room_comfort == 'standart') {
             $('.checkbox-list').find('input').each(function(){
@@ -36,13 +49,13 @@ $( function() {
                 }
             });
             console.log(check_choose);
-            // $('.result-box').find('.result').html('93');
+            // result.html('93');
         }
         if(room == 'room3' && room_comfort == 'comfort') {
             $('.checkbox-list').find('input').each(function(){
                 //$(this).attr('checked', false);
             });
-            // $('.result-box').find('.result').html('Нету данных от заказчика!');
+            // result.html('Нету данных от заказчика!');
         }
     }
 
@@ -62,7 +75,7 @@ $( function() {
     $('.room-check').find('input').change(function() {
         room = $(this).attr('id');
         console.log(room);
-        changeResult()
+        changeResult();
     });
     $('.room-comfort').find('input').change(function() {
         room_comfort = $(this).attr('id');
@@ -79,6 +92,7 @@ $( function() {
                 i++;
             }
         });
+        console.log(check_choose);
         if($(this).prop('checked') == 0) {
             var this_id = $(this).attr('id');
             if($.inArray( this_id, check_choose ) !== -1) {
@@ -91,6 +105,35 @@ $( function() {
             }
         }
         console.log(check_choose);
+
+        // Choose Room 2
+        if(room == 'room2' && room_comfort == 'standart') {
+            if(check_choose.length == 0) { result.html('63 м2'); }
+            // камин
+            if(check_choose.toString() == choose_1.toString()) { result.html('63 м2'); }
+            // камин, терраса
+            if(check_choose.toString() == choose_2.toString()) { result.html('63 м2 с террасой'); }
+            // терраса
+            if(check_choose.toString() == choose_3.toString()) { result.html('63 м2 с террасой'); }
+            // котельная
+            if(check_choose.toString() == choose_4.toString()) { result.html('73 м2'); }
+            // котельная, камин
+            if(check_choose.toString() == choose_5.toString()) { result.html('73 м2'); }
+            // котельная, камин, терраса
+            if(check_choose.toString() == choose_6.toString()) { result.html('73 м2'); }
+            // хамам, камин, терраса
+            if(check_choose.toString() == choose_7.toString()) { result.html('73 м2'); }
+            // котельная, терраса
+            if(check_choose.toString() == choose_8.toString()) { result.html('73 м2'); }
+            // котельная, камин, терраса, хамам
+            if(check_choose.toString() == choose_9.toString()) { result.html('73 м2'); }
+            // котельная, хамам
+            if(check_choose.toString() == choose_10.toString()) { result.html('73 м2'); }
+            // котельная, камин, хамам
+            if(check_choose.toString() == choose_11.toString()) { result.html('73 м2'); }
+            // котельная, хамам, терраса
+            if(check_choose.toString() == choose_12.toString()) { result.html('73 м2'); }
+        }
     });
 
 
