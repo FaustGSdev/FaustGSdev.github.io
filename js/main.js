@@ -7,6 +7,7 @@ $( function() {
     var check_choose = [];
     var i = 0;
     var result = $('.result-box').find('.result');
+    // room 2
     var choose_1 = ['fireplace'],
         choose_2 = ['fireplace', 'terrace'],
         choose_3 = ['terrace'],
@@ -18,14 +19,32 @@ $( function() {
         choose_9 = ['terrace', 'boiler', 'fireplace', 'hamam'],
         choose_10 = ['boiler', 'hamam'],
         choose_11 = ['boiler', 'hamam', 'fireplace'],
-        choose_12 = ['boiler', 'hamam', 'terrace'];
+        choose_12 = ['boiler', 'hamam', 'terrace'],
+        choose_13 = ['dressing', 'boiler', 'hamam', 'fireplace'],
+        choose_14 = ['dressing', 'boiler', 'hamam'],
+        choose_15 = ['dressing', 'boiler', 'fireplace'],
+        choose_16 = ['dressing', 'boiler'],
+        choose_17 = ['dressing', 'hamam', 'fireplace'],
+        choose_18 = ['dressing', 'hamam'],
+        choose_19 = ['dressing', 'fireplace'],
+        choose_20 = ['dressing'],
+      choose_21 = ['boiler', 'fireplace', 'hamam', 'terrace', 'dressing'],
+      choose_22 = ['boiler', 'hamam', 'terrace', 'dressing'],
+      choose_23 = ['boiler', 'terrace', 'dressing', 'fireplace'],
+      choose_24 = ['boiler', 'terrace', 'dressing'];
 
     // init choose room
     function changeResult() {
         if(room == 'room2' && room_comfort == 'standart') {
-            result.html('63');
+            result.html('63 м2');
+            $('.checkbox-list').find('input').each(function(){
+                if($(this).attr('id') == 'terrace' && $(this).attr('checked') == 'checked') {
+                    result.html('63 м2 с террасой');
+                }
+            });
         }
         if(room == 'room2' && room_comfort == 'comfort') {
+            result.html('96 м2');
             $('.checkbox-list').find('input').each(function(){
                 if($(this).attr('id') == 'boiler') {
                     if($.inArray( $(this).attr('id'), check_choose ) == -1) {
@@ -34,9 +53,11 @@ $( function() {
                     }
                     $(this).attr('checked', true);
                 }
+                if($(this).attr('id') == 'terrace' && $(this).attr('checked') == 'checked') {
+                    result.html('96 м2 с террасой');
+                }
             });
             console.log(check_choose);
-            // result.html('96');
         }
         if(room == 'room3' && room_comfort == 'standart') {
             $('.checkbox-list').find('input').each(function(){
@@ -53,7 +74,21 @@ $( function() {
         }
         if(room == 'room3' && room_comfort == 'comfort') {
             $('.checkbox-list').find('input').each(function(){
-                //$(this).attr('checked', false);
+                if($(this).attr('id') == 'terrace' && $(this).attr('checked') == 'checked') {
+                    result.html('96 м2');
+                }
+                if($(this).attr('id') == "bathroom" && $(this).attr('checked') == 'checked') {
+                    result.html('112 м2');
+                }
+                if($(this).attr('id') == "kitchen" && $(this).attr('checked') == 'checked') {
+                    result.html('112 м2');
+                }
+                if($(this).attr('id') == "boiler" && $(this).attr('checked') == 'checked') {
+                    result.html('112 м2');
+                }
+                if($(this).attr('id') == "dressing" && $(this).attr('checked') == 'checked') {
+                    result.html('134 м2');
+                }
             });
             // result.html('Нету данных от заказчика!');
         }
@@ -65,12 +100,14 @@ $( function() {
             room = $(this).attr('id');
             console.log(room);
         }
+        changeResult();
     });
     $('.room-comfort').find('input').each(function(){
         if($(this).prop('checked')) {
             room_comfort = $(this).attr('id');
             console.log(room_comfort);
         }
+        changeResult();
     });
     $('.room-check').find('input').change(function() {
         room = $(this).attr('id');
@@ -80,7 +117,7 @@ $( function() {
     $('.room-comfort').find('input').change(function() {
         room_comfort = $(this).attr('id');
         console.log(room_comfort);
-        changeResult()
+        changeResult();
     });
     changeResult();
 
@@ -116,23 +153,105 @@ $( function() {
             // терраса
             if(check_choose.toString() == choose_3.toString()) { result.html('63 м2 с террасой'); }
             // котельная
-            if(check_choose.toString() == choose_4.toString()) { result.html('73 м2'); }
             // котельная, камин
-            if(check_choose.toString() == choose_5.toString()) { result.html('73 м2'); }
             // котельная, камин, терраса
-            if(check_choose.toString() == choose_6.toString()) { result.html('73 м2'); }
             // хамам, камин, терраса
-            if(check_choose.toString() == choose_7.toString()) { result.html('73 м2'); }
             // котельная, терраса
-            if(check_choose.toString() == choose_8.toString()) { result.html('73 м2'); }
             // котельная, камин, терраса, хамам
-            if(check_choose.toString() == choose_9.toString()) { result.html('73 м2'); }
             // котельная, хамам
-            if(check_choose.toString() == choose_10.toString()) { result.html('73 м2'); }
             // котельная, камин, хамам
-            if(check_choose.toString() == choose_11.toString()) { result.html('73 м2'); }
             // котельная, хамам, терраса
-            if(check_choose.toString() == choose_12.toString()) { result.html('73 м2'); }
+            if(
+              check_choose.toString() == choose_4.toString() ||
+              check_choose.toString() == choose_5.toString() ||
+              check_choose.toString() == choose_6.toString() ||
+              check_choose.toString() == choose_7.toString() ||
+              check_choose.toString() == choose_8.toString() ||
+              check_choose.toString() == choose_9.toString() ||
+              check_choose.toString() == choose_10.toString() ||
+              check_choose.toString() == choose_11.toString() ||
+              check_choose.toString() == choose_12.toString()
+                ) { result.html('73 м2'); }
+            // котельная, камин, хамам, гардеробная при спальне
+            // котельная, хамам, гардеробная при спальне
+            // котельная, камин, гардеробная при спальне
+            // котельная, гардеробная при спальне
+            // камин, хамам, гардеробная при спальне
+            // хамам, гардеробная при спальне
+            // камин, гардеробная при спальне
+            // гардеробная при спальне
+            if(
+              check_choose.toString() == choose_13.toString() ||
+              check_choose.toString() == choose_14.toString() ||
+              check_choose.toString() == choose_15.toString() ||
+              check_choose.toString() == choose_16.toString() ||
+              check_choose.toString() == choose_17.toString() ||
+              check_choose.toString() == choose_18.toString() ||
+              check_choose.toString() == choose_19.toString() ||
+              check_choose.toString() == choose_20.toString()
+            ) { result.html('82 м2'); }
+            // котельная, камин, хамам, гардеробная при спальне, терраса
+            // котельная, хамам, гардеробная при спальне, терраса
+            // котельная, камин, гардеробная при спальне, терраса
+            // котельная, гардеробная при спальне, терраса
+            if(
+              check_choose.toString() == choose_21.toString() ||
+              check_choose.toString() == choose_22.toString() ||
+              check_choose.toString() == choose_23.toString() ||
+              check_choose.toString() == choose_24.toString()
+            ) { result.html('82 м2 с террасой'); }
+        }
+        if(room == 'room2' && room_comfort == 'comfort') {
+            $('.checkbox-list').find('input').each(function(){
+                if($(this).attr('id') == 'terrace' && $(this).attr('checked') == 'checked') {
+                    result.html('96 м2 с террасой');
+                } else {
+                    result.html('96 м2');
+                }
+            });
+            $('.checkbox-list').find('input').change(function() {
+                if($(this).attr('id') == 'terrace') {
+                    result.html('96 м2 с террасой');
+                } else {
+                    result.html('96 м2');
+                }
+            });
+        }
+        if(room == 'room3' && room_comfort == 'standart') {
+            $('.checkbox-list').find('input').each(function(){
+                if($(this).attr('id') == 'terrace' && $(this).attr('checked') == 'checked') {
+                    result.html('96 м2');
+                }
+                if($(this).attr('id') == "bathroom" && $(this).attr('checked') == 'checked') {
+                    result.html('112 м2');
+                }
+                if($(this).attr('id') == "kitchen" && $(this).attr('checked') == 'checked') {
+                    result.html('112 м2');
+                }
+                if($(this).attr('id') == "boiler" && $(this).attr('checked') == 'checked') {
+                    result.html('112 м2');
+                }
+                if($(this).attr('id') == "dressing" && $(this).attr('checked') == 'checked') {
+                    result.html('134 м2');
+                }
+            });
+            $('.checkbox-list').find('input').change(function() {
+                if($(this).attr('id') == 'terrace') {
+                    result.html('96 м2');
+                }
+                if($(this).attr('id') == "bathroom") {
+                    result.html('112 м2');
+                }
+                if($(this).attr('id') == "kitchen") {
+                    result.html('112 м2');
+                }
+                if($(this).attr('id') == "boiler") {
+                    result.html('112 м2');
+                }
+                if($(this).attr('id') == "dressing") {
+                    result.html('134 м2');
+                }
+            });
         }
     });
 
