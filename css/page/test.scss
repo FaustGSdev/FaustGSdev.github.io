@@ -1,5 +1,27 @@
 @import "../_helpers/variables";
 
+.steps {
+    padding: 84px 0 0;
+    max-width: 1260px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    h2 {
+        &.steps-title {
+            position: absolute;
+            top: 0;
+            left: 44px;
+            background: #21A074;
+            border-radius: 4px;
+            padding: 24px 30px 39px;
+            font-weight: 400;
+            font-size: 35px;
+            line-height: 105%;
+            letter-spacing: -0.035em;
+            color: #FFFFFF;
+        }
+    }
+}
 .main-step {
     background: #FFFFFF;
     border-radius: 4px;
@@ -71,6 +93,13 @@
         font-size: 37px;
         line-height: 110%;
         color: #031531;
+        text-align: right;
+        img {
+            display: block;
+            margin: 0 auto 16px;
+            max-width: 100%;
+            height: auto;
+        }
     }
     .facade-list,
     .roofing-list {

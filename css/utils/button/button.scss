@@ -9,20 +9,18 @@ body, .app {
     box-sizing: border-box;
     border: none;
     background: transparent;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0.1em;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
     text-transform: uppercase;
     outline: none !important;
 
-    padding: 0px 50px;
-    width: 300px;
-    height: 70px;
-    border-radius: 55px;
+    padding: 0px 40px;
+    min-width: 130px;
+    min-height: 45px;
+    border-radius: 3px;
     @media only screen and (max-width: $responsive-size-stand-mobile) {
-      width: 220px;
-      padding: 0px 40px;
+      //width: 220px;
     }
     @media only screen and (max-width: 379px) {
       width: initial;
@@ -45,41 +43,22 @@ body, .app {
     }
 
     &.btn-default {
-      background: #E9EEF4;
-      border-radius: 55px;
-      color: #545F6F;
+      background: #fff;
+      color: #21A074;
+      border: 1px solid #21A074;
 
       &:hover {
-        color: #458FF6;
-        svg {
-          path {
-            stroke: #458FF6;
-          }
-        }
-      }
-      &.close {
-        text-align: center;
-      }
-      &.btn-back {
-        @media only screen and (max-width: $responsive-size-stand-mobile) {
-          padding: 0;
-          width: 70px;
-          justify-content: center;
-          border-radius: 50%;
-          span {
-            display: none;
-          }
-        }
+
       }
     }
 
     &.btn-primary {
-      background: #458FF6;
-      box-shadow: 0px 4px 20px rgba(21, 32, 49, 0.05);
+      background: #21A074;
       color: #FFFFFF;
+      &[disabled],
       &.disabled {
         cursor: initial;
-        background: rgba(69, 143, 246, 0.25);
+        background: rgba(33, 160, 116, 0.25);
         position: relative;
         &:after {
           position: absolute;
@@ -92,81 +71,10 @@ body, .app {
           z-index: 2;
         }
         &:hover {
-          background: rgba(69, 143, 246, 0.25);
+
         }
-      }
-      &.btn-select {
-        height: 50px;
-        background: #458FF6;
-        box-shadow: 0px 4px 20px rgba(21, 32, 49, 0.05);
-        border-radius: 55px;
-        width: 100%;
-        font-weight: 700;
-        font-size: 15px;
-        line-height: 22px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #FFFFFF;
-        padding: 0;
-        letter-spacing:0;
-        text-transform: none;
-        margin-top: auto;
-        position: relative;
-        transition: all linear 0.5s;
-      }
-      &:hover {
-        background: linear-gradient(208.18deg, #67C3F3 9.05%, #5A98F2 76.74%);
-        box-shadow: 0px 4px 20px rgba(21, 32, 49, 0.05);
-      }
-    }
-    &.btn-control {
-      background: #458FF6;
-      box-shadow: 0px 4px 20px rgba(21, 32, 49, 0.05);
-      border-radius: 55px;
-      padding: 0 20px;
-      height: 50px;
-      font-weight: 700;
-      font-size: 15px;
-      line-height: 22px;
-      display: flex;
-      align-items: center;
-      color: #FFFFFF;
-      justify-content: center;
-      width: initial;
-      letter-spacing: initial;
-      text-transform: none;
-      svg {
-        display: block;
-        margin-right: 10px;
       }
 
-      &:hover {
-        background: linear-gradient(208.18deg, #67C3F3 9.05%, #5A98F2 76.74%);
-      }
-    }
-    &.ico-del {
-      width: 24px;
-      height: 24px;
-      background: #fff;
-      border-radius: 50%;
-      display: flex;
-      padding: 0;
-      justify-content: center;
-      align-items: center;
-      margin-left: 15px;
-      transition: all linear 0.5s;
-      svg {
-        display: block;
-      }
-      &:hover {
-        background: #458FF6 !important;
-        svg {
-          path {
-            stroke: #fff;
-          }
-        }
-      }
     }
   }
 }

@@ -9,6 +9,7 @@
   </head>
   <body>
     <div class="steps">
+        <h2 class="steps-title">Соберите свою <br> комплектацию дома мечты</h2>
       <div class="main-step step-active" data-id="1">
         <div class="two-column">
           <div class="column">
@@ -16,57 +17,57 @@
             <h2>Какая идеальная планировка вашего дома?</h2>
             <span class="sub-title">Сколько спален вы хотите в доме?</span>
             <div class="room-check">
-              <div class="item">
+              <div class="item radio">
                 <input type="radio" name="room" id="room2" checked>
                 <label for="room2">2 спальни</label>
               </div>
-              <div class="item">
+              <div class="item radio">
                 <input type="radio" name="room" id="room3">
                 <label for="room3">3 спальни</label>
               </div>
             </div>
             <span class="sub-title">Какой уровень комфорта?</span>
             <div class="room-comfort">
-              <div class="item">
+              <div class="item radio-comfort">
                 <input type="radio" name="comfort" id="standart" checked>
                 <label for="standart">стандарт</label>
               </div>
-              <div class="item">
+              <div class="item radio-comfort">
                 <input type="radio" name="comfort" id="comfort">
                 <label for="comfort">комфорт</label>
               </div>
             </div>
             <span class="sub-title">Что еще необходимо?</span>
             <div class="checkbox-list">
-              <div class="item">
+              <div class="item checkbox">
                 <input type="checkbox" name="boiler" id="boiler">
                 <label for="boiler">котельная</label>
               </div>
-              <div class="item">
+              <div class="item checkbox">
                 <input type="checkbox" name="hamam" id="hamam">
                 <label for="hamam">хамам</label>
               </div>
-              <div class="item">
+              <div class="item checkbox">
                 <input type="checkbox" name="dressing" id="dressing">
                 <label for="dressing">гардеробная при спальне</label>
               </div>
-              <div class="item">
+              <div class="item checkbox">
                 <input type="checkbox" name="fireplace" id="fireplace">
                 <label for="fireplace">камин</label>
               </div>
-              <div class="item">
+              <div class="item checkbox">
                 <input type="checkbox" name="bathroom" id="bathroom">
                 <label for="bathroom">хозяйский санузел</label>
               </div>
-              <div class="item">
+              <div class="item checkbox">
                 <input type="checkbox" name="office" id="office">
                 <label for="office">кабинет/игровая</label>
               </div>
-              <div class="item">
+              <div class="item checkbox">
                 <input type="checkbox" name="terrace" id="terrace">
                 <label for="terrace">терасса</label>
               </div>
-              <div class="item">
+              <div class="item checkbox">
                 <input type="checkbox" name="kitchen" id="kitchen">
                 <label for="kitchen">черная кухня</label>
               </div>
@@ -74,12 +75,13 @@
           </div>
           <div class="column">
             <div class="result-box">
+              <img src="image/63.jpg">
               <span class="result">63 м2</span>
             </div>
           </div>
         </div>
         <div class="btn-holder">
-<!--          <button class="btn btn-next">Далее</button>-->
+          <button class="btn btn-next btn-primary" disabled>Далее</button>
         </div>
       </div>
       <div class="main-step" data-id="2">
@@ -100,8 +102,8 @@
           </div>
         </div>
         <div class="btn-holder">
-          <button class="btn btn-prev">Назад</button>
-          <button class="btn btn-next" disabled>Далее</button>
+          <button class="btn btn-prev btn-default">Назад</button>
+          <button class="btn btn-next btn-primary" disabled>Далее</button>
         </div>
       </div>
       <div class="main-step" data-id="3">
