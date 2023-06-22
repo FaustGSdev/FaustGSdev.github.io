@@ -157,7 +157,14 @@
         .item {
             display: flex;
             align-items: center;
+            flex-direction: column;
             width: 32%;
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+                margin-bottom: 10px;
+            }
             input {
                 display: none;
             }
@@ -196,6 +203,12 @@
             align-items: center;
             width: 50%;
             margin-bottom: 15px;
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+                margin-bottom: 10px;
+            }
             input {
                 display: none;
             }
@@ -221,6 +234,72 @@
             }
             @media only screen and (max-width : $responsive-size-big-mobile) {
                 width: 100%;
+            }
+        }
+    }
+    .payment-list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-bottom: 40px;
+        @media only screen and (max-width : $responsive-size-big-mobile) {
+            padding-bottom: 20px;
+        }
+        .item {
+            width: calc(50% - 25px);
+            @media only screen and (max-width : $responsive-size-big-mobile) {
+                width: 100%;
+                &+.item {
+                    margin: 20px;
+                }
+            }
+
+            input {
+                display: none;
+            }
+            label {
+                text-align: center;
+                display: block;
+                width: 100%;
+                padding: 19px 25px 35px;
+                border: 2px solid #DCDCDC;
+                border-radius: 3px;
+                transition: all linear 0.5s;
+                @media only screen and (max-width : $responsive-size-big-mobile) {
+                    text-align: left;
+                    padding: 20px 17px 17px;
+                    border: 2px solid #DCDCDC;
+                }
+                strong {
+                    font-weight: 400;
+                    font-size: 35px;
+                    line-height: 110%;
+                    letter-spacing: -0.035em;
+                    color: #031531;
+                    display: block;
+                    margin-bottom: 18px;
+                    @media only screen and (max-width : $responsive-size-big-mobile) {
+                        font-weight: 600;
+                        font-size: 20px;
+                        line-height: 110%;
+                        margin-bottom: 10px;
+                    }
+                }
+                span {
+                    display: block;
+                    font-weight: 400;
+                    font-size: 17px;
+                    line-height: 120%;
+                    color: #000000;
+                    @media only screen and (max-width : $responsive-size-big-mobile) {
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 123%;
+                    }
+                }
+            }
+            input:checked + label {
+                border: 2px solid #21A074;
             }
         }
     }

@@ -509,6 +509,9 @@ $( function() {
     $('.interior-list').find('input').change(function() {
         $('.interior-list').parents('.main-step').find('.btn-next').attr('disabled', false);
     });
+    $('.payment-list').find('input').change(function() {
+        $('.payment-list').parents('.main-step').find('.btn-next').attr('disabled', false);
+    });
 
     // ** nav btn step
     var activeStep;

@@ -136,7 +136,14 @@
     .main-step .roofing-list .item {
       display: flex;
       align-items: center;
+      flex-direction: column;
       width: 32%; }
+      .main-step .facade-list .item img,
+      .main-step .roofing-list .item img {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px; }
       .main-step .facade-list .item input,
       .main-step .roofing-list .item input {
         display: none; }
@@ -175,6 +182,11 @@
       align-items: center;
       width: 50%;
       margin-bottom: 15px; }
+      .main-step .interior-list .item img {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px; }
       .main-step .interior-list .item input {
         display: none; }
       .main-step .interior-list .item label {
@@ -198,5 +210,62 @@
       @media only screen and (max-width: 640px) {
         .main-step .interior-list .item {
           width: 100%; } }
+  .main-step .payment-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 40px; }
+    @media only screen and (max-width: 640px) {
+      .main-step .payment-list {
+        padding-bottom: 20px; } }
+    .main-step .payment-list .item {
+      width: calc(50% - 25px); }
+      @media only screen and (max-width: 640px) {
+        .main-step .payment-list .item {
+          width: 100%; }
+          .main-step .payment-list .item + .item {
+            margin: 20px; } }
+      .main-step .payment-list .item input {
+        display: none; }
+      .main-step .payment-list .item label {
+        text-align: center;
+        display: block;
+        width: 100%;
+        padding: 19px 25px 35px;
+        border: 2px solid #DCDCDC;
+        border-radius: 3px;
+        transition: all linear 0.5s; }
+        @media only screen and (max-width: 640px) {
+          .main-step .payment-list .item label {
+            text-align: left;
+            padding: 20px 17px 17px;
+            border: 2px solid #DCDCDC; } }
+        .main-step .payment-list .item label strong {
+          font-weight: 400;
+          font-size: 35px;
+          line-height: 110%;
+          letter-spacing: -0.035em;
+          color: #031531;
+          display: block;
+          margin-bottom: 18px; }
+          @media only screen and (max-width: 640px) {
+            .main-step .payment-list .item label strong {
+              font-weight: 600;
+              font-size: 20px;
+              line-height: 110%;
+              margin-bottom: 10px; } }
+        .main-step .payment-list .item label span {
+          display: block;
+          font-weight: 400;
+          font-size: 17px;
+          line-height: 120%;
+          color: #000000; }
+          @media only screen and (max-width: 640px) {
+            .main-step .payment-list .item label span {
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 123%; } }
+      .main-step .payment-list .item input:checked + label {
+        border: 2px solid #21A074; }
 
 /*# sourceMappingURL=test.css.map */

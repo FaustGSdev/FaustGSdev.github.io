@@ -90,15 +90,24 @@
         <div class="roofing-list">
           <div class="item">
             <input type="radio" name="roofing" id="flat">
-            <label for="flat">Плоская</label>
+            <label for="flat">
+              <img src="image/img-01.jpg">
+              Плоская
+            </label>
           </div>
           <div class="item">
             <input type="radio" name="roofing" id="triangular">
-            <label for="triangular">Треугольная</label>
+            <label for="triangular">
+              <img src="image/img-02.jpg">
+              Треугольная
+            </label>
           </div>
           <div class="item">
             <input type="radio" name="roofing" id="bevelled">
-            <label for="bevelled">Скошенная</label>
+            <label for="bevelled">
+              <img src="image/img-03.jpg">
+              Скошенная
+            </label>
           </div>
         </div>
         <div class="btn-holder">
@@ -112,15 +121,24 @@
         <div class="facade-list">
           <div class="item">
             <input type="radio" name="facade" id="facade1">
-            <label for="facade1">Фасад 1</label>
+            <label for="facade1">
+              <img src="image/img-04.jpg">
+              Фасад 1
+            </label>
           </div>
           <div class="item">
             <input type="radio" name="facade" id="facade2">
-            <label for="facade2">Фасад 2</label>
+            <label for="facade2">
+              <img src="image/img-05.jpg">
+              Фасад 2
+            </label>
           </div>
           <div class="item">
             <input type="radio" name="facade" id="facade3">
-            <label for="facade3">Фасад 3</label>
+            <label for="facade3">
+              <img src="image/img-06.jpg">
+              Фасад 3
+            </label>
           </div>
         </div>
         <div class="btn-holder">
@@ -134,11 +152,17 @@
         <div class="interior-list">
           <div class="item">
             <input type="radio" name="interior" id="interior1">
-            <label for="interior1">Интерьер 1</label>
+            <label for="interior1">
+              <img src="image/img-07.jpg">
+              Интерьер 1
+            </label>
           </div>
           <div class="item">
             <input type="radio" name="interior" id="interior2">
-            <label for="interior2">Интерьер 2</label>
+            <label for="interior2">
+              <img src="image/img-08.jpg">
+              Интерьер 2
+            </label>
           </div>
         </div>
         <div class="btn-holder">
@@ -153,17 +177,40 @@
         <div class="payment-list">
           <div class="item">
             <input type="radio" name="payment" id="own_funds">
-            <label for="own_funds">Собственные средства</label>
+            <label for="own_funds">
+              <strong>Собственные средства</strong>
+              <span>Вы совершаете оплату по этапам, которые мы согласовываем индивидуально для вас. Возможен наличный и безналичный расчет.</span>
+            </label>
           </div>
           <div class="item">
             <input type="radio" name="payment" id="credit">
-            <label for="credit">Кредит</label>
+            <label for="credit">
+              <strong>Кредит</strong>
+              <span>Мы предоставляем индивидуальные кредитные условия у нашего банка партнера. 10% годовых, когда в других компаниях это более 16%.</span>
+            </label>
           </div>
         </div>
         <div class="btn-holder">
           <button class="btn btn-prev btn-default">Назад</button>
-          <button class="btn btn-finish btn-primary" disabled>Расчитать цену</button>
+          <button class="btn btn-next btn-primary" disabled>Расчитать цену</button>
         </div>
+      </div>
+      <div class="main-step step-final" data-id="7">
+        <form action="#" class="form-calc" id="formCalc">
+          <h2>Ваш уникальный дом просчитан. Заполните ваши данные и мы вышлем полную смету на вашу почту</h2>
+          <div class="input-list">
+            <div class="item">
+              <input type="email" placeholder="Ваш e-mail" name="email" id="email">
+            </div>
+            <div class="item">
+              <input type="text" placeholder="Как к вам обращаться?" name="name" id="name">
+            </div>
+            <div class="item">
+              <input type="number" placeholder="Телефон" name="phone" id="phone">
+            </div>
+          </div>
+          <input type="submit" value="Получить дом">
+        </form>
       </div>
     </div>
   <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
