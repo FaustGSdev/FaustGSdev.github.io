@@ -1,13 +1,16 @@
 .steps {
-  padding: 84px 0 0;
+  padding: 84px 15px 0;
   max-width: 1260px;
   margin: 0 auto;
   width: 100%;
   position: relative; }
+  @media only screen and (max-width: 640px) {
+    .steps {
+      padding-top: 53px; } }
   .steps h2.steps-title {
     position: absolute;
     top: 0;
-    left: 44px;
+    left: 59px;
     background: #21A074;
     border-radius: 4px;
     padding: 24px 30px 39px;
@@ -15,38 +18,74 @@
     font-size: 35px;
     line-height: 105%;
     letter-spacing: -0.035em;
-    color: #FFFFFF; }
+    color: #FFFFFF;
+    max-width: 500px; }
+    @media only screen and (max-width: 640px) {
+      .steps h2.steps-title {
+        max-width: initial;
+        left: 26px;
+        right: 29px;
+        padding: 15px 20px 19px;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 115%;
+        letter-spacing: -0.035em;
+        color: #FFFFFF; } }
 
 .main-step {
   background: #FFFFFF;
   border-radius: 4px;
   padding: 80px 40px 100px;
   display: none; }
+  @media only screen and (max-width: 640px) {
+    .main-step {
+      padding: 45px 20px 20px 25px; } }
   .main-step.step-active {
     display: block; }
   .main-step .step-numbers {
     display: block;
-    padding: 20px 0;
+    padding: 0 0 20px 0;
     color: #031531;
-    opacity: 0.4; }
+    opacity: 0.4;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 110%; }
+    @media only screen and (max-width: 640px) {
+      .main-step .step-numbers {
+        padding-bottom: 6px; } }
   .main-step .two-column {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap; }
     .main-step .two-column .column {
       width: 49%; }
+      @media only screen and (max-width: 767px) {
+        .main-step .two-column .column {
+          width: 100%; } }
   .main-step h2 {
     margin-bottom: 35px; }
+    @media only screen and (max-width: 640px) {
+      .main-step h2 {
+        margin-bottom: 20px; } }
   .main-step .sub-title {
     display: block;
-    margin-bottom: 15px; }
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 110%; }
   .main-step .btn-holder {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 20px; }
+    @media only screen and (max-width: 640px) {
+      .main-step .btn-holder {
+        justify-content: flex-end; } }
     .main-step .btn-holder .btn + .btn {
       margin-left: 10px; }
+    @media only screen and (max-width: 640px) {
+      .main-step .btn-holder.btn-holder-first-step {
+        margin-top: -35px; } }
   .main-step .room-comfort,
   .main-step .room-check {
     margin-bottom: 15px;
@@ -76,6 +115,12 @@
     line-height: 110%;
     color: #031531;
     text-align: right; }
+    @media only screen and (max-width: 640px) {
+      .main-step .result-box {
+        font-weight: 600;
+        font-size: 22.3211px;
+        line-height: 110%;
+        text-align: left; } }
     .main-step .result-box img {
       display: block;
       margin: 0 auto 16px;
@@ -92,6 +137,34 @@
       display: flex;
       align-items: center;
       width: 32%; }
+      .main-step .facade-list .item input,
+      .main-step .roofing-list .item input {
+        display: none; }
+      .main-step .facade-list .item label,
+      .main-step .roofing-list .item label {
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 110%;
+        color: #031531;
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #fff;
+        border-radius: 3px;
+        transition: all linear 0.5s; }
+        @media only screen and (max-width: 767px) {
+          .main-step .facade-list .item label,
+          .main-step .roofing-list .item label {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 110%; } }
+      .main-step .facade-list .item input:checked + label,
+      .main-step .roofing-list .item input:checked + label {
+        border: 2px solid #21A074; }
+      @media only screen and (max-width: 767px) {
+        .main-step .facade-list .item,
+        .main-step .roofing-list .item {
+          width: 100%; } }
   .main-step .interior-list {
     margin-bottom: 15px;
     display: flex;
@@ -102,5 +175,28 @@
       align-items: center;
       width: 50%;
       margin-bottom: 15px; }
+      .main-step .interior-list .item input {
+        display: none; }
+      .main-step .interior-list .item label {
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 110%;
+        color: #031531;
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #fff;
+        border-radius: 3px;
+        transition: all linear 0.5s; }
+        @media only screen and (max-width: 767px) {
+          .main-step .interior-list .item label {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 110%; } }
+      .main-step .interior-list .item input:checked + label {
+        border: 2px solid #21A074; }
+      @media only screen and (max-width: 640px) {
+        .main-step .interior-list .item {
+          width: 100%; } }
 
 /*# sourceMappingURL=test.css.map */

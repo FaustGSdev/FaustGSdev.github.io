@@ -21,6 +21,11 @@ html {
     font-size: 35px;
     line-height: 110%;
     color: #21A074;
+    @media only screen and (max-width : $responsive-size-big-mobile) {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 110%;
+    }
   }
 
   body {
