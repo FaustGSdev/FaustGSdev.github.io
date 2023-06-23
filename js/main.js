@@ -118,13 +118,30 @@ $( function() {
         }
     });
     $('.room-check').find('input').change(function() {
+        if(room == 'room3' && room_comfort == 'comfort' && $(this).attr('id') =='room2') {
+            $('#boiler').prop('checked', false);
+        }
+        $('#kitchen').prop('checked', false);
+        $('#bathroom').prop('checked', false);
+        $('#office').prop('checked', false);
         room = $(this).attr('id');
+        if(room == 'room3') {
+            $('#office').prop('disabled', true);
+        } else {
+            $('#office').prop('disabled', false);
+        }
         saveComponent();
         changeResult();
     });
     $('.room-comfort').find('input').change(function() {
         $(this).prop('checked', true);
+        if(room == 'room3' && room_comfort == 'comfort' && $(this).attr('id') =='standart') {
+            $('#boiler').prop('checked', false);
+        }
         room_comfort = $(this).attr('id');
+        $('#kitchen').prop('checked', false);
+        $('#bathroom').prop('checked', false);
+        $('#office').prop('checked', false);
         if(room == 'room2' && $(this).attr('id') == 'comfort') {
             $('.checkbox-list').find('input').each(function(index){
                 if($(this).attr('id') == 'boiler' && $(this).prop('checked') == 0) {
@@ -202,7 +219,7 @@ $( function() {
                     }
                 });
                 $('.room-comfort').find('input').each(function(){
-                    if($(this).attr('id') == 'comfort') {
+                    if($(this).attr('id') == 'standart') {
                         $(this).prop('checked', true);
                         room_comfort = $(this).attr('id');
                     }
@@ -215,7 +232,7 @@ $( function() {
             $('.checkbox-list').find('input').each(function(){
                 if($(this).attr('id') == 'bathroom' && $(this).prop('checked')) {
                     $('.room-comfort').find('input').each(function(){
-                        if($(this).attr('id') == 'comfort') {
+                        if($(this).attr('id') == 'standart') {
                             $(this).prop('checked', true);
                             room_comfort = $(this).attr('id');
                         }
@@ -446,6 +463,9 @@ $( function() {
                     saveComponent();
                     $(this).prop('checked', true);
                 }
+                if($(this).attr('id') == "terrace" && $(this).prop('checked')){
+                    result.html('93 м2 с террасой');
+                }
                 if($(this).attr('id') == "kitchen" && $(this).prop('checked') ||
                   $(this).attr('id') == "boiler" && $(this).prop('checked') ||
                   $(this).attr('id') == "bathroom" && $(this).prop('checked')
@@ -461,15 +481,22 @@ $( function() {
             console.log(check_choose);
         }
         if(room == 'room3' && room_comfort == 'comfort') {
-            result.html('112 м2');
-            resultImg.attr('src', 'image/111.jpg');
+            result.html('93 м2');
+            resultImg.attr('src', 'image/93.jpg');
             $('.checkbox-list').find('input').each(function(){
+                if($(this).attr('id') == "terrace" && $(this).prop('checked')){
+                    result.html('93 м2 с террасой');
+                }
                 if($(this).attr('id') == "kitchen" && $(this).prop('checked') && $(this).attr('id') == "dressing" && !$(this).prop('checked') ||
                   $(this).attr('id') == "boiler" && $(this).prop('checked') && $(this).attr('id') == "dressing" && !$(this).prop('checked') ||
                   $(this).attr('id') == "bathroom" && $(this).prop('checked') && $(this).attr('id') == "dressing" && !$(this).prop('checked')
                 ) {
                     result.html('112 м2');
                     resultImg.attr('src', 'image/111.jpg');
+                    if($(this).attr('id') == 'terrace' && !$(this).prop('checked')) {
+                        saveComponent();
+                        $(this).prop('checked', true);
+                    }
                 }
                 if($(this).attr('id') == "dressing" && $(this).prop('checked')) {
                     result.html('134 м2');
@@ -535,36 +562,12 @@ $( function() {
             }
         });
     });
-
-
-    // if(radio){
-    //     radio.addClass('error');
-    //     error++;
-    //     radio.each(function(){
-    //         if($(this).prop('checked')) {
-    //             modelSex = $(this).val();
-    //             radio.removeClass('error');
-    //             radio.addClass('valid');
-    //             error--;
-    //         }
-    //     });
-    // }
-    // if(age == "0-3") {
-    //     $('.baby').addClass('active');
-    // }
-    // if(modelSex == "Female") {
-    //     $('.female').each(function(){
-    //         if($(this).data('age') == age) {
-    //             $(this).addClass('active');
-    //         }
-    //     });
-    // }
-    // if($('#search').is(':focus') && !$('.search-drop').hasClass('active')) {
-    //     $('.search-drop').addClass('active');
-    //     $('g.active-holder g').removeClass('show');
-    //     if ( $('.part-holder').css('display') == 'block' ) {
-    //         $('.part-holder').fadeOut();
-    //         $('.body-img').removeClass('active');
-    //     }
-    // }
+    $('label i').hover(function (e){
+        e.preventDefault();
+        if($(this).parents('label').find('.info').css('display') == 'none'){
+            $(this).parents('label').find('.info').show();
+        } else {
+            $(this).parents('label').find('.info').hide();
+        }
+    });
 } );

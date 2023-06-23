@@ -53,12 +53,13 @@ select {
       height: 16px;
       background: transparent;
       border-radius: 50%;
-      transition: all linear 0.5s;
+      transition: all linear 0.2s;
       z-index: 2;
     }
   }
 }
 .radio-comfort {
+  position: relative;
   input {
     display: none;
     &:checked + label {
@@ -85,7 +86,38 @@ select {
     min-height: 37px;
     border: 1px solid #031531;
     border-radius: 3px;
-    transition: all linear 0.5s;
+    transition: all linear 0.2s;
+    i {
+      position: absolute;
+      background: #031531;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: -6px;
+      right: -7px;
+      svg {
+        display: block;
+      }
+    }
+    .info {
+      background: #FFFFFF;
+      border: 1px solid #D8D8D8;
+      padding: 14px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 110%;
+      color: #031531;
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: none;
+      width: 240px;
+      z-index: 10;
+    }
   }
 }
 .checkbox {
@@ -94,6 +126,17 @@ select {
     &:checked + label {
       &:before {
         background: #21A074;
+      }
+    }
+    &[disabled] + label {
+      cursor: initial;
+      opacity: 0.7;
+      &:after {
+        opacity: 0.7;
+      }
+      &:before {
+        background: #21A074;
+        opacity: 0.7;
       }
     }
     &.error + label {
@@ -121,7 +164,7 @@ select {
       height: 16px;
       background: #FFFFFF;
       z-index: 1;
-      transition: all linear 0.5s;
+      transition: all linear 0.2s;
       box-sizing: border-box;
       border: 1px solid #031531;
       border-radius: 2px;
@@ -136,7 +179,7 @@ select {
       height: 12px;
       background: transparent;
       border-radius: 2px;
-      transition: all linear 0.5s;
+      transition: all linear 0.2s;
       z-index: 2;
     }
   }

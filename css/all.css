@@ -569,38 +569,76 @@ select {
     height: 16px;
     background: transparent;
     border-radius: 50%;
-    transition: all linear 0.5s;
+    transition: all linear 0.2s;
     z-index: 2; }
 
-.radio-comfort input {
-  display: none; }
-  .radio-comfort input:checked + label {
-    background: #21A074;
+.radio-comfort {
+  position: relative; }
+  .radio-comfort input {
+    display: none; }
+    .radio-comfort input:checked + label {
+      background: #21A074;
+      border-radius: 3px;
+      border: 1px solid #21A074;
+      color: #fff; }
+    .radio-comfort input.error + label {
+      border: 1px solid red; }
+  .radio-comfort label {
+    padding: 13px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 110%;
+    color: #031531;
+    cursor: pointer;
+    min-height: 37px;
+    border: 1px solid #031531;
     border-radius: 3px;
-    border: 1px solid #21A074;
-    color: #fff; }
-  .radio-comfort input.error + label {
-    border: 1px solid red; }
-.radio-comfort label {
-  padding: 13px 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 110%;
-  color: #031531;
-  cursor: pointer;
-  min-height: 37px;
-  border: 1px solid #031531;
-  border-radius: 3px;
-  transition: all linear 0.5s; }
+    transition: all linear 0.2s; }
+    .radio-comfort label i {
+      position: absolute;
+      background: #031531;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: -6px;
+      right: -7px; }
+      .radio-comfort label i svg {
+        display: block; }
+    .radio-comfort label .info {
+      background: #FFFFFF;
+      border: 1px solid #D8D8D8;
+      padding: 14px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 110%;
+      color: #031531;
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: none;
+      width: 240px;
+      z-index: 10; }
 
 .checkbox input {
   display: none; }
   .checkbox input:checked + label:before {
     background: #21A074; }
+  .checkbox input[disabled] + label {
+    cursor: initial;
+    opacity: 0.7; }
+    .checkbox input[disabled] + label:after {
+      opacity: 0.7; }
+    .checkbox input[disabled] + label:before {
+      background: #21A074;
+      opacity: 0.7; }
   .checkbox input.error + label:after {
     border: 1px solid red; }
 .checkbox label {
@@ -622,7 +660,7 @@ select {
     height: 16px;
     background: #FFFFFF;
     z-index: 1;
-    transition: all linear 0.5s;
+    transition: all linear 0.2s;
     box-sizing: border-box;
     border: 1px solid #031531;
     border-radius: 2px; }
@@ -636,7 +674,7 @@ select {
     height: 12px;
     background: transparent;
     border-radius: 2px;
-    transition: all linear 0.5s;
+    transition: all linear 0.2s;
     z-index: 2; }
 
 .form-calc {
