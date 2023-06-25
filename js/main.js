@@ -570,4 +570,52 @@ $( function() {
             $(this).parents('label').find('.info').hide();
         }
     });
+    $('.team-slider:not(.slick-initialized)').slick({
+        dots: false,
+        arrows: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        adaptiveHeight: true,
+        asNavFor: '.team-slider-nav',
+        prevArrow: '<button type="button" class="slick-prev btn btn-nav"><svg width="17" height="31" viewBox="0 0 17 31" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+          '<path d="M15 29L2 15.5L15 2" stroke="rgba(0,0,0,0.2)" stroke-width="2" stroke-linecap="square"/>\n' +
+          '</svg>\n</button>',
+        nextArrow: '<button type="button" class="slick-next btn btn-nav"><svg width="17" height="31" viewBox="0 0 17 31" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+          '<path d="M2 2L15 15.5L2 29" stroke="rgba(0,0,0,0.2)" stroke-width="2" stroke-linecap="square"/>\n' +
+          '</svg>\n</button>',
+    });
+    $('.team-slider-nav:not(.slick-initialized)').slick({
+        dots: false,
+        arrows: false,
+        infinite: true,
+        speed: 500,
+        fade: false,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: '.team-slider',
+        focusOnSelect: true,
+        responsive: [
+            {
+                breakpoint: 1259,
+                settings: {
+                    slidesToShow: 5,
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 4,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 5,
+                }
+            },
+        ]
+    });
 } );
