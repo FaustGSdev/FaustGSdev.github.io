@@ -126,8 +126,10 @@ $( function() {
         $('#office').prop('checked', false);
         room = $(this).attr('id');
         if(room == 'room3') {
+            $('#office').prop('checked', true);
             $('#office').prop('disabled', true);
         } else {
+            $('#office').prop('checked', false);
             $('#office').prop('disabled', false);
         }
         saveComponent();
@@ -135,7 +137,7 @@ $( function() {
     });
     $('.room-comfort').find('input').change(function() {
         $(this).prop('checked', true);
-        if(room == 'room3' && room_comfort == 'comfort' && $(this).attr('id') =='standart') {
+        if(room == 'room3' && $(this).attr('id') == 'comfort' || room == 'room3' && $(this).attr('id') =='standart') {
             $('#boiler').prop('checked', false);
         }
         room_comfort = $(this).attr('id');
@@ -143,30 +145,49 @@ $( function() {
         $('#bathroom').prop('checked', false);
         $('#office').prop('checked', false);
         if(room == 'room2' && $(this).attr('id') == 'comfort') {
-            $('.checkbox-list').find('input').each(function(index){
-                if($(this).attr('id') == 'boiler' && $(this).prop('checked') == 0) {
-                    $(this).prop('checked', true);
-                }
-            });
+            if($('#boiler').prop('checked') == 0) {
+                $(this).prop('checked', true);
+            }
+            // $('.checkbox-list').find('input').each(function(index){
+            //     if($(this).attr('id') == 'boiler' && $(this).prop('checked') == 0) {
+            //         $(this).prop('checked', true);
+            //         saveComponent();
+            //     }
+            // });
         }
         if(room == 'room3' && $(this).attr('id') == 'standart') {
-            $('.checkbox-list').find('input').each(function(){
-                if($(this).attr('id') == 'terrace' && !$(this).prop('checked') || $(this).attr('id') == 'dressing' && !$(this).prop('checked')) {
-                    saveComponent();
-                    $(this).prop('checked', true);
-                }
-                if($(this).attr('id') == "kitchen" && $(this).prop('checked') ||
-                  $(this).attr('id') == "boiler" && $(this).prop('checked') ||
-                  $(this).attr('id') == "bathroom" && $(this).prop('checked')
-                ) {
-                    $('.room-comfort').find('input').each(function(){
-                        if($(this).attr('id') == 'comfort') {
-                            $(this).prop('checked', true);
-                            room_comfort = $(this).attr('id');
-                        }
-                    });
-                }
-            });
+            if(!$('#terrace').prop('checked') || !$('#dressing').prop('checked')) {
+                $(this).prop('checked', true);
+            }
+            if($('#kitchen').prop('checked') ||
+              $('#boiler').prop('checked') ||
+              $('#bathroom').prop('checked')
+            ) {
+                $('.room-comfort').find('input').each(function(){
+                    if($(this).attr('id') == 'comfort') {
+                        $(this).prop('checked', true);
+                        room_comfort = $(this).attr('id');
+                    }
+                });
+            }
+            // $('.checkbox-list').find('input').each(function(){
+            //     if($(this).attr('id') == 'terrace' && !$(this).prop('checked') || $(this).attr('id') == 'dressing' && !$(this).prop('checked')) {
+            //         $(this).prop('checked', true);
+            //         saveComponent();
+            //     }
+            //     if($(this).attr('id') == "kitchen" && $(this).prop('checked') ||
+            //       $(this).attr('id') == "boiler" && $(this).prop('checked') ||
+            //       $(this).attr('id') == "bathroom" && $(this).prop('checked')
+            //     ) {
+            //         $('.room-comfort').find('input').each(function(){
+            //             if($(this).attr('id') == 'comfort') {
+            //                 $(this).prop('checked', true);
+            //                 room_comfort = $(this).attr('id');
+            //                 saveComponent();
+            //             }
+            //         });
+            //     }
+            // });
         }
         saveComponent();
         changeResult();
@@ -460,7 +481,6 @@ $( function() {
             resultImg.attr('src', 'image/93.jpg');
             $('.checkbox-list').find('input').each(function(){
                 if($(this).attr('id') == 'terrace' && !$(this).prop('checked') || $(this).attr('id') == 'dressing' && !$(this).prop('checked')) {
-                    saveComponent();
                     $(this).prop('checked', true);
                 }
                 if($(this).attr('id') == "terrace" && $(this).prop('checked')){
@@ -483,28 +503,64 @@ $( function() {
         if(room == 'room3' && room_comfort == 'comfort') {
             result.html('93 м2');
             resultImg.attr('src', 'image/93.jpg');
+            var checkNum = 0;
             $('.checkbox-list').find('input').each(function(){
-                if($(this).attr('id') == "terrace" && $(this).prop('checked')){
-                    result.html('93 м2 с террасой');
-                }
-                if($(this).attr('id') == "kitchen" && $(this).prop('checked') && $(this).attr('id') == "dressing" && !$(this).prop('checked') ||
-                  $(this).attr('id') == "boiler" && $(this).prop('checked') && $(this).attr('id') == "dressing" && !$(this).prop('checked') ||
-                  $(this).attr('id') == "bathroom" && $(this).prop('checked') && $(this).attr('id') == "dressing" && !$(this).prop('checked')
-                ) {
-                    result.html('112 м2');
-                    resultImg.attr('src', 'image/111.jpg');
-                    if($(this).attr('id') == 'terrace' && !$(this).prop('checked')) {
-                        saveComponent();
-                        $(this).prop('checked', true);
-                    }
-                }
-                if($(this).attr('id') == "dressing" && $(this).prop('checked')) {
-                    result.html('134 м2');
-                    resultImg.attr('src', 'image/133.jpg');
+                // if($(this).attr('id') == "terrace" && $(this).prop('checked')){
+                //     result.html('93 м2 с террасой');
+                // }
+                // if($(this).attr('id') == "kitchen" && $(this).prop('checked') && $(this).attr('id') == "dressing" && !$(this).prop('checked') ||
+                //   $(this).attr('id') == "boiler" && $(this).prop('checked') && $(this).attr('id') == "dressing" && !$(this).prop('checked') ||
+                //   $(this).attr('id') == "bathroom" && $(this).prop('checked') && $(this).attr('id') == "dressing" && !$(this).prop('checked')
+                // ) {
+                //     result.html('112 м2');
+                //     resultImg.attr('src', 'image/111.jpg');
+                //     if($(this).attr('id') == 'terrace' && !$(this).prop('checked')) {
+                //         $(this).prop('checked', true);
+                //         saveComponent();
+                //     }
+                // }
+                // if($(this).attr('id') == "dressing" && $(this).prop('checked') && $(this).attr('id') == "terrace" && $(this).prop('checked')) {
+                //     result.html('134 м2 с террасой');
+                //     resultImg.attr('src', 'image/133.jpg');
+                //     saveComponent();
+                // }
+                // if($(this).attr('id') == "dressing" && $(this).prop('checked')) {
+                //     result.html('134 м2');
+                //     resultImg.attr('src', 'image/133.jpg');
+                //     saveComponent();
+                // }
+                if($(this).attr('id') != "office") {
+                    checkNum ++;
                 }
             });
+            if($('#terrace').prop('checked')){
+                result.html('93 м2 с террасой');
+            }
+            if($('#kitchen').prop('checked') && !$('#dressing').prop('checked') ||
+              $('#boiler').prop('checked') && !$('#dressing').prop('checked') ||
+              $('#bathroom').prop('checked') && !$('#dressing').prop('checked')
+            ) {
+                result.html('112 м2');
+                resultImg.attr('src', 'image/111.jpg');
+                if(!$('#terrace').prop('checked')) {
+                    $(this).prop('checked', true);
+                }
+            }
+            if($('#dressing').prop('checked') && $('#terrace').prop('checked')) {
+                result.html('134 м2 с террасой');
+                resultImg.attr('src', 'image/133.jpg');
+            }
+            if($('#dressing').prop('checked') && !$('#terrace').prop('checked')) {
+                result.html('134 м2');
+                resultImg.attr('src', 'image/133.jpg');
+            }
+            if (checkNum == 0) {
+                result.html('93 м2');
+                resultImg.attr('src', 'image/93.jpg');
+            }
             // result.html('Нету данных от заказчика!');
         }
+        saveComponent();
     }
 
     // save components
@@ -521,7 +577,7 @@ $( function() {
 
     // Steps
     $('.checkbox-list').find('input').change(function() {
-        if($('.checkbox-list').find('input:checked').length != 0) {
+        if($('.checkbox-list').find('input').prop('checked').length != 0) {
             $('.checkbox-list').parents('.main-step').find('.btn-next').attr('disabled', false);
         } else {
             $('.checkbox-list').parents('.main-step').find('.btn-next').attr('disabled', true);
